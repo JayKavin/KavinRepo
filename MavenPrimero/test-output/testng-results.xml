@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Primero Regression Test" duration-ms="30582" started-at="2018-11-01T16:53:35Z" finished-at="2018-11-01T16:54:06Z">
+    <groups>
+    </groups>
+    <test name="Create New Child Case" duration-ms="30582" started-at="2018-11-01T16:53:35Z" finished-at="2018-11-01T16:54:06Z">
+      <class name="com.primero.qa.testcases.CreateCaseTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="setup" is-config="true" duration-ms="4819" started-at="2018-11-01T12:53:35Z" finished-at="2018-11-01T12:53:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="LoginIntoPrimero()[pri:1, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="LoginIntoPrimero" duration-ms="11289" started-at="2018-11-01T12:53:40Z" finished-at="2018-11-01T12:53:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginIntoPrimero -->
+        <test-method status="PASS" signature="CreateNewCaseForm()[pri:2, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="CreateNewCaseForm" duration-ms="2435" started-at="2018-11-01T12:53:51Z" finished-at="2018-11-01T12:53:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateNewCaseForm -->
+        <test-method status="PASS" signature="FeedDatatoNewCaseForm(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="FeedDatatoNewCaseForm" duration-ms="12001" started-at="2018-11-01T12:53:54Z" data-provider="getExcelCaseData" finished-at="2018-11-01T12:54:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Child1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Child1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[5.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Male]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Angola|Algeria]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Single]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FeedDatatoNewCaseForm -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="teardown" is-config="true" duration-ms="0" started-at="2018-11-01T12:54:06Z" finished-at="2018-11-01T12:54:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.primero.qa.testcases.CreateCaseTest -->
+    </test> <!-- Create New Child Case -->
+  </suite> <!-- Primero Regression Test -->
+</testng-results>

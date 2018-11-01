@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Primero Regression Test]">
+  <listeners>
+    <listener class-name="com.qa.primero.ExtentReportListener.ExtentReporterNG"/>
+  </listeners>
+  <test name="Create New Child Case(failed)">
+    <classes>
+      <class name="com.primero.qa.testcases.CreateCaseTest">
+        <methods>
+          <include name="setup"/>
+          <include name="FeedDatatoNewCaseForm" invocation-numbers="0"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.primero.qa.testcases.CreateCaseTest -->
+    </classes>
+  </test> <!-- Create New Child Case(failed) -->
+</suite> <!-- Failed suite [Primero Regression Test] -->

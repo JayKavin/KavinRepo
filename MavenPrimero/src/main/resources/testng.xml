@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+ <suite name="Primero Regression Test">
+  
+     <listeners> 
+  		<listener class-name="com.qa.primero.ExtentReportListener.ExtentReporterNG" /> 
+  	</listeners> 
+  <test name="Create New Child Case">
+<!--   <parameter name="sUsername" value="testuser_1"/>
+ 	<parameter name="sPassword" value="Test@123"/> -->
+  
+
+    <classes>
+      <!-- <class name="com.primero.qa.testcases.LoginPageTest"/> -->
+	  <class name="com.primero.qa.testcases.CreateCaseTest"/>
+    </classes>
+  </test>
+ </suite>
