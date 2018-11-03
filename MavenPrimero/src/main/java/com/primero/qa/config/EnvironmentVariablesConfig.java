@@ -12,6 +12,5 @@ public class EnvironmentVariablesConfig {
 		TestScenarioName = testScenarioName;
 	}
 	
-	//Edited environment variable by Feature
-//addded again in feature
+//edited in shared -Local brach
 }
