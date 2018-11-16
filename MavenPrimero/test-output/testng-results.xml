@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Primero Regression Test" duration-ms="30582" started-at="2018-11-01T16:53:35Z" finished-at="2018-11-01T16:54:06Z">
+  <suite name="Primero Regression Test" duration-ms="23206" started-at="2018-11-16T03:43:52Z" finished-at="2018-11-16T03:44:15Z">
     <groups>
     </groups>
-    <test name="Create New Child Case" duration-ms="30582" started-at="2018-11-01T16:53:35Z" finished-at="2018-11-01T16:54:06Z">
+    <test name="Create New Child Case" duration-ms="23206" started-at="2018-11-16T03:43:52Z" finished-at="2018-11-16T03:44:15Z">
       <class name="com.primero.qa.testcases.CreateCaseTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="setup" is-config="true" duration-ms="4819" started-at="2018-11-01T12:53:35Z" finished-at="2018-11-01T12:53:40Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="setup" is-config="true" duration-ms="5748" started-at="2018-11-15T22:43:52Z" finished-at="2018-11-15T22:43:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="LoginIntoPrimero()[pri:1, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="LoginIntoPrimero" duration-ms="11289" started-at="2018-11-01T12:53:40Z" finished-at="2018-11-01T12:53:51Z">
+        <test-method status="PASS" signature="LoginIntoPrimero()[pri:1, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="LoginIntoPrimero" duration-ms="3023" started-at="2018-11-15T22:43:58Z" finished-at="2018-11-15T22:44:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginIntoPrimero -->
-        <test-method status="PASS" signature="CreateNewCaseForm()[pri:2, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="CreateNewCaseForm" duration-ms="2435" started-at="2018-11-01T12:53:51Z" finished-at="2018-11-01T12:53:54Z">
+        <test-method status="PASS" signature="CreateNewCaseForm()[pri:2, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="CreateNewCaseForm" duration-ms="2435" started-at="2018-11-15T22:44:01Z" finished-at="2018-11-15T22:44:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateNewCaseForm -->
-        <test-method status="PASS" signature="FeedDatatoNewCaseForm(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="FeedDatatoNewCaseForm" duration-ms="12001" started-at="2018-11-01T12:53:54Z" data-provider="getExcelCaseData" finished-at="2018-11-01T12:54:06Z">
+        <test-method status="PASS" signature="FeedDatatoNewCaseForm(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="FeedDatatoNewCaseForm" duration-ms="11943" started-at="2018-11-15T22:44:04Z" data-provider="getExcelCaseData" finished-at="2018-11-15T22:44:15Z">
           <params>
             <param index="0">
               <value>
@@ -60,7 +60,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FeedDatatoNewCaseForm -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="teardown" is-config="true" duration-ms="0" started-at="2018-11-01T12:54:06Z" finished-at="2018-11-01T12:54:06Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="teardown" is-config="true" duration-ms="0" started-at="2018-11-15T22:44:15Z" finished-at="2018-11-15T22:44:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
