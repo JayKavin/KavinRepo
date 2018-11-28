@@ -1,6 +1,6 @@
 package com.primero.qa.config;
 
-public class EnvironmentVariablesConfig {
+public class  EnvironmentVariablesConfig {
 	
 	public static String TestScenarioName;
 

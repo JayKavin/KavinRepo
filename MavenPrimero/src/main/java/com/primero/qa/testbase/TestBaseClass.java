@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import com.primero.qa.config.EnvironmentVariablesConfig;
 import com.primero.qa.util.CommonUtil;
 import com.primero.qa.util.ExcelUtil;
 
@@ -129,7 +130,7 @@ public class TestBaseClass  {
 			BufferedWriter bw = new BufferedWriter(fw);
 
 			bw.write("<h2 align='CENTER'><font color='#003399'>UNICEF QA Test Report</font></h2>");
-			bw.write("<h3 align='CENTER'><font color='#003399'>Test Name : CreateCaseTestTestName</font></h3>");
+			bw.write("<h3 align='CENTER'><font color='#003399'>Test Name : "+ EnvironmentVariablesConfig.getTestScenarioName() +"</font></h3>");
 			bw.write(
 					"<table border='1' bordercolor='#E6E6E6' bgcolor='#CCCCCC' cellpadding='2' cellspacing='0' width='90%' align='Center' borderwidth='1px' >");
 			bw.write("<tr><font color='#003399'>Executed on ::   " + StartDateTime + " </font></tr>");

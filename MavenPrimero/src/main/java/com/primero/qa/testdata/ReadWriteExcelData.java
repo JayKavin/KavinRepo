@@ -1,5 +1,8 @@
 package com.primero.qa.testdata;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -40,4 +43,41 @@ public class ReadWriteExcelData extends TestBaseClass {
 	}
 	
 
+
+	
+	//Read new case details.
+	@DataProvider 
+	public Object[][] getTableArray() 
+	{
+		
+		Object[][] obj1 = null;
+		try {
+			obj1 = ExcelUtil.getTableArray(prop.getProperty("Path_TestData") + prop.getProperty("File_TestData"), "CaseSheet");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return   obj1;
+
+		
+	}
+	/*
+	@DataProvider 
+	public Iterator<Object[]> getTableArray() 
+	{
+		
+		Object[] obj1 = null;
+		try {
+			obj1 = ExcelUtil.getTableArray(prop.getProperty("Path_TestData") + prop.getProperty("File_TestData"), "CaseSheet");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return new Object[][] {obj1};
+
+		
+	}*/
+	
 }

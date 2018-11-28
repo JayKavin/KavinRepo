@@ -9,7 +9,11 @@
       <class name="com.primero.qa.testcases.CreateCaseTest">
         <methods>
           <include name="setup"/>
-          <include name="FeedDatatoNewCaseForm" invocation-numbers="0"/>
+          <include name="Logout"/>
+          <include name="FeedDatatoNewCaseForm" invocation-numbers="2"/>
+          <include name="LaunchBrowser"/>
+          <include name="DeleteCookies"/>
+          <include name="LoginIntoPrimero"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- com.primero.qa.testcases.CreateCaseTest -->

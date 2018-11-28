@@ -1,10 +1,19 @@
 package com.primero.qa.testcases;
 
+import java.io.IOException;
+import java.util.Iterator;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -23,8 +32,7 @@ public class CreateCaseTest extends TestBaseClass {
 	CaseListPage objCaseListPage;
 	NewCasePage objNewCasePage;
 	LoginPage objlogin;
-
-	
+	public int iCnt=0;
 	
 	/*public CreateCaseTest() {
 		super();
@@ -35,7 +43,7 @@ public class CreateCaseTest extends TestBaseClass {
 	}*/
 
 	
-	@BeforeClass
+	@BeforeSuite
 	public void setup() {
 		
 		try {
@@ -44,7 +52,7 @@ public class CreateCaseTest extends TestBaseClass {
 			
 			EnvironmentVariablesConfig.setTestScenarioName("CreateNewChildCase");
 			// Browser Initialization;
-			checkIfBrowserExists(false);
+			//checkIfBrowserExists(false);
 			setExcel();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -52,9 +60,25 @@ public class CreateCaseTest extends TestBaseClass {
 		}
 	}
 
-	@Test(priority = 1)
+	@BeforeTest 
+	public void LaunchBrowser() {
+		
+		try {
+
+			// Browser Initialization;
+			checkIfBrowserExists(false);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@BeforeMethod
 	public void LoginIntoPrimero() throws Exception {
 
+		iCnt++;
 		objlogin = new LoginPage();
 		
 		String strtitle = objlogin.checkLoginPageTitle();
@@ -65,13 +89,18 @@ public class CreateCaseTest extends TestBaseClass {
 		Thread.sleep(1000);
 		Assert.assertEquals(objHome.checkLoggedInUsername(prop.getProperty("Username")), true);
 
-		customHTMLReport( "TestId1", "LoginIntoPrimero", "Log in is successful",  "", "Passed", "Logged in username is "+prop.getProperty("Username"));
+		customHTMLReport( "TestId "+ iCnt , "Login into Primero", "Login is successful",  "", "Passed", "Logged in username is "+prop.getProperty("Username"));
 		
 		objCaseListPage = objHome.tabSelect("CASES");
 		Thread.sleep(1000);
+		
+		objNewCasePage = objCaseListPage.pNavigatenewCPCaseForm();
+		Assert.assertTrue(objNewCasePage.checkNewcaseFormLoaded(), "Form loaded successfully");
+		customHTMLReport( "TestId "+ iCnt, "New case Form Load", "Form loaded successfully",  "", "Passed", "");
+
 	}
 
-	@Test(priority = 2)
+	/*@BeforeMethod
 	public void CreateNewCaseForm() throws Exception {
 		try {
 
@@ -83,17 +112,25 @@ public class CreateCaseTest extends TestBaseClass {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 
+/*	   @DataProvider
+
+	    public Iterator<Object[]> dp(){
+
+	        return ReadWriteExcelData.
+
+	    }*/
 	
-	@Test(dataProvider="getExcelCaseData",priority = 3,dataProviderClass=ReadWriteExcelData.class)
-	public void FeedDatatoNewCaseForm(String str1,String str2,String str3,String str4,String str5,String str6,String str7) throws Exception
+	@Test(dataProvider="getTableArray",dataProviderClass=ReadWriteExcelData.class)
+	public void FeedDatatoNewCaseForm(String[] strArray) throws Exception
 	{
-	System.out.println(str1+"first iter");
-	objNewCasePage.fillcpcaseform( str1, str2, str3, str4, str5, str6,str7);
+/*	System.out.println(strArray[0]+"first iter");
+	System.out.println(strArray[1]+"first iter");*/
+	objNewCasePage.fillcpcaseform1(strArray);
 	
 	String strCaseId = objNewCasePage.SaveaCase();
-	
+	Thread.sleep(2000);
 	boolean blnCaseFalg =false;
 	if(strCaseId!=null)
 	{
@@ -102,12 +139,40 @@ public class CreateCaseTest extends TestBaseClass {
 	  objCaseListPage=  objHome.tabSelect("CASES");
 	}
 	Assert.assertTrue(blnCaseFalg, "Case"+strCaseId+"Created Successfully");
-	customHTMLReport( "TestId1", "Create New Case", "New Case created successfully",  "", "Passed", "Case Id "+strCaseId);
+	customHTMLReport( "TestId "+ iCnt, "Create New Case", "New Case created successfully",  "", "Passed", "Case Id "+strCaseId);
 	//Assert.assertTrue(driver.getTitle().matches(".*TST-\\d{5}.*"));
 	
 	}
+	
+	
+	@AfterMethod
+	public void Logout() throws Exception {
 
-	@AfterClass
+		objlogin = objCaseListPage.Logout();
+		//objlogin = new LoginPage();
+		
+		String strtitle = objlogin.checkLoginPageTitle();
+		Assert.assertEquals(strtitle, "Login");
+		customHTMLReport( "TestId "+ iCnt, "Logout from Primero", "Logout successful",  "", "Passed", "");
+		
+		
+	}
+	
+	/*@AfterClass
+	public void CloseBrowser() throws IOException {
+
+
+		driver.close();
+	}*/
+	
+	@AfterTest
+	public void DeleteCookies() {
+
+
+		//driver.close();
+	}
+	
+	@AfterSuite
 	public void teardown() {
 
 
@@ -118,32 +183,3 @@ public class CreateCaseTest extends TestBaseClass {
 
 
 
-//We can pass the result directly to the pom class without dataprovider.
-
-/*
-@Test(priority = 2)
-public void FeedDatatoNewCaseForm() {
-	int iRow = ExcelUtil.getCellRowNum("CaseSheet", "Test_Id", "Test_1");
-	Object[] obj1 = new Object[6];
-	String strFlag = ExcelUtil.getCellData("CaseSheet", "RunFlag", iRow);
-	String excelFlag = "Y";
-	if ((strFlag.toUpperCase().trim()).equals(excelFlag)) {
-
-		// String strName = getCellData("CaseSheet", "Name", iRow);
-		obj1[0] = ExcelUtil.getCellData("CaseSheet", "Name", iRow);
-		// String strAge = getCellData("CaseSheet", "Age", iRow);
-		obj1[1] = ExcelUtil.getCellData("CaseSheet", "Age", iRow);
-		// String strSex = getCellData("CaseSheet", "Sex", iRow);
-		obj1[2] = ExcelUtil.getCellData("CaseSheet", "Sex", iRow);
-		obj1[3] = ExcelUtil.getCellData("CaseSheet", "AgeEstimated", iRow);
-		// String strNationality = getCellData("CaseSheet", "Nationality", iRow);
-		obj1[4] = ExcelUtil.getCellData("CaseSheet", "Nationality", iRow);
-		// String strMaritalStatus = getCellData("CaseSheet", "MaritalStatus", iRow);
-
-		obj1[5] = ExcelUtil.getCellData("CaseSheet", "MaritalStatus", iRow);
-
-		System.out.println(obj1[0]);
-
-		objNewCasePage.fillcpcaseform(obj1);
-	}*/
-//}

@@ -20,6 +20,12 @@ public class CaseListPage extends TestBaseClass {
 	@FindBy(xpath ="//a[contains(text(),'Create New Case')]")
 	WebElement CreateNewCPCase;
 	
+	@FindBy(linkText ="Logout")
+	WebElement Logout;
+	
+
+	
+	
 	//Initialization of page elements
 	public CaseListPage()
 	{
@@ -45,6 +51,17 @@ public NewCasePage pNavigatenewCPCaseForm() throws Exception
 	
 	return new  NewCasePage();
 }
+
+public LoginPage Logout() throws Exception
+{
+	Logout.click();
+	Thread.sleep(1000); 	
+
+	
+	return new  LoginPage();
+}
+
+
 }
 	
 

@@ -1,66 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Primero Regression Test" duration-ms="23206" started-at="2018-11-16T03:43:52Z" finished-at="2018-11-16T03:44:15Z">
+  <suite name="Primero Regression Test" duration-ms="211712" started-at="2018-11-28T16:40:37Z" finished-at="2018-11-28T16:44:08Z">
     <groups>
     </groups>
-    <test name="Create New Child Case" duration-ms="23206" started-at="2018-11-16T03:43:52Z" finished-at="2018-11-16T03:44:15Z">
+    <test name="Create New Child Case" duration-ms="211712" started-at="2018-11-28T16:40:37Z" finished-at="2018-11-28T16:44:08Z">
       <class name="com.primero.qa.testcases.CreateCaseTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="setup" is-config="true" duration-ms="5748" started-at="2018-11-15T22:43:52Z" finished-at="2018-11-15T22:43:58Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="setup" is-config="true" duration-ms="535" started-at="2018-11-28T11:40:36Z" finished-at="2018-11-28T11:40:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="LoginIntoPrimero()[pri:1, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="LoginIntoPrimero" duration-ms="3023" started-at="2018-11-15T22:43:58Z" finished-at="2018-11-15T22:44:01Z">
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="LaunchBrowser" is-config="true" duration-ms="4871" started-at="2018-11-28T11:40:37Z" finished-at="2018-11-28T11:40:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method status="PASS" signature="LoginIntoPrimero()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="LoginIntoPrimero" is-config="true" duration-ms="24119" started-at="2018-11-28T11:40:42Z" finished-at="2018-11-28T11:41:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginIntoPrimero -->
-        <test-method status="PASS" signature="CreateNewCaseForm()[pri:2, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="CreateNewCaseForm" duration-ms="2435" started-at="2018-11-15T22:44:01Z" finished-at="2018-11-15T22:44:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateNewCaseForm -->
-        <test-method status="PASS" signature="FeedDatatoNewCaseForm(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="FeedDatatoNewCaseForm" duration-ms="11943" started-at="2018-11-15T22:44:04Z" data-provider="getExcelCaseData" finished-at="2018-11-15T22:44:15Z">
+        <test-method status="PASS" signature="FeedDatatoNewCaseForm([Ljava.lang.String;)[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="FeedDatatoNewCaseForm" duration-ms="29401" started-at="2018-11-28T11:41:06Z" data-provider="getTableArray" finished-at="2018-11-28T11:41:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Child1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Child1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[5.0]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Male]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Yes]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Angola|Algeria]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Single]]>
+                <![CDATA[[Ljava.lang.String;@4667c4c1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FeedDatatoNewCaseForm -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@3532ec19]" name="teardown" is-config="true" duration-ms="0" started-at="2018-11-15T22:44:15Z" finished-at="2018-11-15T22:44:15Z">
+        <test-method status="PASS" signature="Logout()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="Logout" is-config="true" duration-ms="1097" started-at="2018-11-28T11:41:35Z" finished-at="2018-11-28T11:41:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+        <test-method status="PASS" signature="LoginIntoPrimero()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="LoginIntoPrimero" is-config="true" duration-ms="5535" started-at="2018-11-28T11:41:36Z" finished-at="2018-11-28T11:41:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginIntoPrimero -->
+        <test-method status="PASS" signature="FeedDatatoNewCaseForm([Ljava.lang.String;)[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="FeedDatatoNewCaseForm" duration-ms="29039" started-at="2018-11-28T11:41:42Z" data-provider="getTableArray" finished-at="2018-11-28T11:42:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@2f9a4401]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FeedDatatoNewCaseForm -->
+        <test-method status="PASS" signature="Logout()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="Logout" is-config="true" duration-ms="1102" started-at="2018-11-28T11:42:11Z" finished-at="2018-11-28T11:42:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+        <test-method status="PASS" signature="LoginIntoPrimero()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="LoginIntoPrimero" is-config="true" duration-ms="5457" started-at="2018-11-28T11:42:12Z" finished-at="2018-11-28T11:42:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginIntoPrimero -->
+        <test-method status="PASS" signature="FeedDatatoNewCaseForm([Ljava.lang.String;)[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="FeedDatatoNewCaseForm" duration-ms="31475" started-at="2018-11-28T11:42:17Z" data-provider="getTableArray" finished-at="2018-11-28T11:42:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@22c75c01]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FeedDatatoNewCaseForm -->
+        <test-method status="PASS" signature="Logout()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="Logout" is-config="true" duration-ms="1107" started-at="2018-11-28T11:42:49Z" finished-at="2018-11-28T11:42:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+        <test-method status="PASS" signature="LoginIntoPrimero()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="LoginIntoPrimero" is-config="true" duration-ms="5412" started-at="2018-11-28T11:42:50Z" finished-at="2018-11-28T11:42:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginIntoPrimero -->
+        <test-method status="PASS" signature="FeedDatatoNewCaseForm([Ljava.lang.String;)[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="FeedDatatoNewCaseForm" duration-ms="31501" started-at="2018-11-28T11:42:55Z" data-provider="getTableArray" finished-at="2018-11-28T11:43:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@46e64760]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FeedDatatoNewCaseForm -->
+        <test-method status="PASS" signature="Logout()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="Logout" is-config="true" duration-ms="1102" started-at="2018-11-28T11:43:27Z" finished-at="2018-11-28T11:43:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+        <test-method status="PASS" signature="LoginIntoPrimero()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="LoginIntoPrimero" is-config="true" duration-ms="5666" started-at="2018-11-28T11:43:28Z" finished-at="2018-11-28T11:43:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginIntoPrimero -->
+        <test-method status="PASS" signature="FeedDatatoNewCaseForm([Ljava.lang.String;)[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="FeedDatatoNewCaseForm" duration-ms="33577" started-at="2018-11-28T11:43:34Z" data-provider="getTableArray" finished-at="2018-11-28T11:44:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@3e5fd2b1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FeedDatatoNewCaseForm -->
+        <test-method status="PASS" signature="Logout()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="Logout" is-config="true" duration-ms="1107" started-at="2018-11-28T11:44:07Z" finished-at="2018-11-28T11:44:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+        <test-method status="PASS" signature="DeleteCookies()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="DeleteCookies" is-config="true" duration-ms="0" started-at="2018-11-28T11:44:08Z" finished-at="2018-11-28T11:44:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteCookies -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.primero.qa.testcases.CreateCaseTest@27efef64]" name="teardown" is-config="true" duration-ms="0" started-at="2018-11-28T11:44:08Z" finished-at="2018-11-28T11:44:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

@@ -5,8 +5,14 @@
     <classes>
       <class name="com.primero.qa.testcases.CreateCaseTest">
         <methods>
+          <include name="CreateNewCaseForm"/>
           <include name="setup"/>
+          <include name="Logout"/>
           <include name="FeedDatatoNewCaseForm"/>
+          <include name="LaunchBrowser"/>
+          <include name="DeleteCookies"/>
+          <include name="LoginIntoPrimero"/>
+          <include name="CloseBrowser"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- com.primero.qa.testcases.CreateCaseTest -->

@@ -33,10 +33,11 @@ import com.primero.qa.testbase.TestBaseClass;
 
 public class ExcelUtil extends TestBaseClass {
 
+	private static final String ValueType = null;
 	// Create a constructor class with parameter
 
-	private static XSSFWorkbook ExcelWBook;
-	private static XSSFSheet ExcelWSheet;
+	public static XSSFWorkbook ExcelWBook;
+	public static XSSFSheet ExcelWSheet;
 	private static XSSFRow Row;
 	private static XSSFCell Cell;
 
@@ -142,7 +143,7 @@ public class ExcelUtil extends TestBaseClass {
 
 			int startRow = 1;
 
-			int startCol = 1;
+			int startCol = 0;
 
 			int ci, cj;
 
@@ -150,8 +151,9 @@ public class ExcelUtil extends TestBaseClass {
 
 			// you can write a function as well to get Column count
 
-			int totalCols = 2;
+			int totalCols =  getColumnCount(SheetName);
 
+			System.out.println(totalCols);
 			tabArray = new String[totalRows][totalCols];
 
 			ci = 0;
@@ -160,11 +162,11 @@ public class ExcelUtil extends TestBaseClass {
 
 				cj = 0;
 
-				for (int j = startCol; j <= totalCols; j++, cj++) {
+				for (int j = startCol; j <= totalCols-1; j++, cj++) {
 
 					tabArray[ci][cj] = getCellData(i, j);
 
-					System.out.println(tabArray[ci][cj]);
+					//System.out.println(tabArray[ci][cj]);
 
 				}
 
@@ -200,21 +202,33 @@ public class ExcelUtil extends TestBaseClass {
  
 				Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
  
-				int dataType = Cell.getCellType();
- 
-				if  (dataType == 3) {
- 
+				if (Cell == null)
 					return "";
- 
-				}
+				// System.out.println(cell.getCellType());
+				if (Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_STRING)
+					return Cell.getStringCellValue();
+				else if (Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_NUMERIC || Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_FORMULA) {
+
+					String cellText = String.valueOf(Cell.getNumericCellValue());
+					if (HSSFDateUtil.isCellDateFormatted(Cell)) {
+						// format in form of M/D/YY
+						double d = Cell.getNumericCellValue();
+
+						Calendar cal = Calendar.getInstance();
+						cal.setTime(HSSFDateUtil.getJavaDate(d));
+						cellText = (String.valueOf(cal.get(Calendar.YEAR))).substring(2);
+						cellText = cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(Calendar.MONTH) + 1 + "/" + cellText;
+
+						// System.out.println(cellText);
+
+					}
+
+					return cellText;
+				} else if (Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_BLANK)
+					return "";
 				else
-				{
- 
-					String CellData = Cell.getStringCellValue();
- 
-					return CellData;
- 
-				}
+					return String.valueOf(Cell.getBooleanCellValue());
+
 			}
 				catch (Exception e){
  
@@ -403,8 +417,40 @@ public class ExcelUtil extends TestBaseClass {
 		}
 
 
-}
 
+
+
+//returns number of columns in a sheet
+	public static int getColumnCount(String sheetName) {
+		// check if sheet exists
+		if (!isSheetExist(sheetName))
+			return -1;
+
+		ExcelWSheet = ExcelWBook.getSheet(sheetName);
+		Row = ExcelWSheet.getRow(0);
+
+		if (Row == null)
+			return -1;
+
+		return Row.getLastCellNum();
+
+	}
+
+	
+	// find whether sheets exists
+		public static boolean isSheetExist(String sheetName) {
+			int index = ExcelWBook.getSheetIndex(sheetName);
+			if (index == -1) {
+				index = ExcelWBook.getSheetIndex(sheetName.toUpperCase());
+				if (index == -1)
+					return false;
+				else
+					return true;
+			} else
+				return true;
+		}
+		
+}		
 
 /*
  * author: Naveen Khunteta
