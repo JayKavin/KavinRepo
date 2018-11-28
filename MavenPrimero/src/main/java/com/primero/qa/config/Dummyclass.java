@@ -2,13 +2,5 @@ package com.primero.qa.config;
 
 public class Dummyclass {
 
-//Jay branch commit
-	//Jay branch commit 2
-
-	//Jay branch commit 3
-
-	//Localbranch commit 1
-	//Add a new line for Demo
-//nov 15 commitS
-	//another commit nov 15
+//Fresh Commit by Jay Nov 28
 }
