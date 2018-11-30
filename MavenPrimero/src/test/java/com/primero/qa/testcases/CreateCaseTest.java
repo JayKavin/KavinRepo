@@ -49,7 +49,7 @@ public class CreateCaseTest extends TestBaseClass {
 		try {
 			// Property Initialization;
 			InitializeProperties();
-			
+
 			EnvironmentVariablesConfig.setTestScenarioName("CreateNewChildCase");
 			// Browser Initialization;
 			//checkIfBrowserExists(false);
