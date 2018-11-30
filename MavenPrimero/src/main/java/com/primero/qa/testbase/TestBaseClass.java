@@ -29,7 +29,7 @@ public class TestBaseClass  {
 	public static String resultFile = userDirector + "//test-output//PrimeroCustomReport.html";
 
 	
-	public void InitializeProperties() {
+	public static  void InitializeProperties() {
 		try {
 			prop = new Properties();
 			FileInputStream file;
@@ -183,7 +183,7 @@ public class TestBaseClass  {
 
 	}
 	
-	public void  DeleteCustomReportFile()
+	public static void  DeleteCustomReportFile()
 	{
 	
 
