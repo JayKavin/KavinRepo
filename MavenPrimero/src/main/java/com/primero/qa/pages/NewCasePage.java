@@ -216,34 +216,32 @@ public class NewCasePage extends TestBaseClass{
 		
 		//ProgIndID	20
 		PRogIDVID.sendKeys(strArray[20]);
-		Thread.sleep(1000);
-		
+	
 		//UNNo	21
 		UNNo.sendKeys(strArray[21]);
-		Thread.sleep(1000);
+	
 		
 		//NationalIDNo	22
 		NationIdNo.sendKeys(strArray[22]);
-		Thread.sleep(1000);
+	
 		
 	//	OtheIDDocType	23
 		OtherTypeDoc.sendKeys(strArray[23]);
-		Thread.sleep(1000);
+	
 		
 		//OtherIDNo	24
 		OtherIDDocNo.sendKeys(strArray[24]);
-		
-		Thread.sleep(1000);
+	
 		
 		//OtherAgencyID	25
 		OtherAgencyId.sendKeys(strArray[25]);
 		
-		Thread.sleep(1000);
+	
 		
 		//OtherAGName	26
 		OtherAgencyName.sendKeys(strArray[26]);
 		
-		Thread.sleep(1000);
+
 		
 	//	DocumentsCarried	27
 		DocCarried.sendKeys(strArray[27]);

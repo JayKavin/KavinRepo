@@ -6,17 +6,14 @@
   </listeners>
   <test name="Create New Child Case(failed)">
     <classes>
-      <class name="com.primero.qa.testcases.CreateCaseTest">
+      <class name="com.primero.qa.testcases.EditCPCaseTest">
         <methods>
           <include name="setup"/>
-          <include name="Logout"/>
-          <include name="FeedDatatoNewCaseForm" invocation-numbers="2"/>
-          <include name="LaunchBrowser"/>
-          <include name="DeleteCookies"/>
+          <include name="LaunchURL"/>
           <include name="LoginIntoPrimero"/>
-          <include name="teardown"/>
+          <include name="logout"/>
         </methods>
-      </class> <!-- com.primero.qa.testcases.CreateCaseTest -->
+      </class> <!-- com.primero.qa.testcases.EditCPCaseTest -->
     </classes>
   </test> <!-- Create New Child Case(failed) -->
 </suite> <!-- Failed suite [Primero Regression Test] -->
