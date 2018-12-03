@@ -15,6 +15,8 @@ import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.primero.qa.config.EnvironmentVariablesConfig;
 import com.primero.qa.util.CommonUtil;
@@ -33,8 +35,11 @@ public class TestBaseClass  {
 		try {
 			prop = new Properties();
 			FileInputStream file;
+		//	file = new FileInputStream(
+					//"C:\\Users\\jkasilingam\\eclipse-workspace\\MavenPrimero\\src\\main\\java\\com\\primero\\qa\\config\\config.properties");
+     
 			file = new FileInputStream(
-					"C:\\Users\\jkasilingam\\eclipse-workspace\\MavenPrimero\\src\\main\\java\\com\\primero\\qa\\config\\config.properties");
+			"C:\\SeleniumPOC\\PrimeroPOCGit\\MavenPrimero\\src\\main\\java\\com\\primero\\qa\\config\\config.properties");
 			prop.load(file);
 			DeleteCustomReportFile();
 		}
@@ -73,7 +78,10 @@ public class TestBaseClass  {
 
 			if (browserName.equals("ie")) {
 				System.setProperty(prop.getProperty("IEFile_DriverClass"), prop.getProperty("IEFile_DriverPath"));
-				driver = new ChromeDriver();
+				//driver = new ChromeDriver();
+				//System.setProperty("webdriver.edge.driver", "driver/MicrosoftWebDriver.exe");
+				 driver = new EdgeDriver();
+
 
 			}
 			driver.manage().window().maximize();

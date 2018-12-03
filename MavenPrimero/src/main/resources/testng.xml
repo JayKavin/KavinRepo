@@ -12,7 +12,11 @@
 
     <classes>
       <!-- <class name="com.primero.qa.testcases.LoginPageTest"/> -->
-	  <class name="com.primero.qa.testcases.CreateCaseTest"/>
+	  <class name="com.primero.qa.testcases.CreateCaseTest"/> 
+	  <class name="com.primero.qa.testcases.EditCPCaseTest"/> 
+	 <!--  <class name="com.primero.qa.testcases.CreateNewGBVCaseTest"/> 
+	  <class name="com.primero.qa.testcases.EditGBVCaseTest"/> 
+	   -->
     </classes>
   </test>
  </suite>

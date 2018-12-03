@@ -53,6 +53,7 @@ public class CreateCaseTest extends TestBaseClass {
 			EnvironmentVariablesConfig.setTestScenarioName("CreateNewChildCase");
 			// Browser Initialization;
 			//checkIfBrowserExists(false);
+			//set excel workbook to read data table
 			setExcel();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block //
